@@ -32,7 +32,11 @@ public class Venta {
 	
 	@ManyToOne
 	@JoinColumn(name = "id_persona", nullable = false, foreignKey = @ForeignKey(name = "fk_venta_persona"))
-	private Persona persona;	
+	private Persona persona;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_proveedor", nullable = false, foreignKey = @ForeignKey(name = "fk_venta_proveedor"))
+	private Proveedor proveedor;
 	
 	@Column(name = "importe")
 	private double importe;
@@ -55,6 +59,14 @@ public class Venta {
 
 	public void setFecha(LocalDateTime fecha) {
 		this.fecha = fecha;
+	}
+
+	public Proveedor getProveedor() {
+		return proveedor;
+	}
+
+	public void setProveedor(Proveedor proveedor) {
+		this.proveedor = proveedor;
 	}
 
 	public Persona getPersona() {
