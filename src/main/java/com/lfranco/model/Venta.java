@@ -30,11 +30,11 @@ public class Venta {
 	@JsonSerialize(using = ToStringSerializer.class) 
 	private LocalDateTime fecha;
 	
-	@ManyToOne
+	@ManyToOne(fetch= FetchType.LAZY)
 	@JoinColumn(name = "id_persona", nullable = false, foreignKey = @ForeignKey(name = "fk_venta_persona"))
 	private Persona persona;
 	
-	@ManyToOne
+	@ManyToOne(fetch= FetchType.LAZY)
 	@JoinColumn(name = "id_proveedor", nullable = false, foreignKey = @ForeignKey(name = "fk_venta_proveedor"))
 	private Proveedor proveedor;
 	

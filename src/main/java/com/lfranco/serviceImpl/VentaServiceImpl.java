@@ -35,12 +35,13 @@ public class VentaServiceImpl implements IVentaService{
 
 	@Override
 	public Venta listarPorId(int id) {
-		return dao.findOne(id);
+		//return dao.findOne(id);
+		return dao.findByIdOptimize(id);
 	}
 
 	@Override
 	public List<Venta> listar() {
-		return dao.findAll();
+		return dao.findAllOptimize();
 	}
 
 }
