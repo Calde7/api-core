@@ -27,12 +27,12 @@ public class ProductoService implements IProductoService{
 
 	@Override
 	public void eliminar(int id) {
-		dao.delete(id);		
+		dao.deleteById(id);	
 	}
 
 	@Override
 	public Producto listarPorId(int id) {
-		return dao.findOne(id);
+		return dao.findById(id).get();
 	}
 
 	@Override
